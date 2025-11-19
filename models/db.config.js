@@ -1,4 +1,4 @@
-const mysql = require('mysql2');
+import mysql from 'mysql2';
 
 //konfigurasi koneksi database
 const db = mysql.createConnection({
@@ -17,4 +17,4 @@ db.connect(err => {
     }
 });
 
-module.exports = db;
+export default db;

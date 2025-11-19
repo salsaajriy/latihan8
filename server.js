@@ -1,12 +1,16 @@
-const express = require('express');
+import express from 'express';
+import userRoutes from './routes/user.routes.js';
+import productRoutes from './routes/product.routes.js';
+
 const app = express();
 const port = 8001;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-//Routes
-const userRoutes = require('./routes/user.routes');
+// routes
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

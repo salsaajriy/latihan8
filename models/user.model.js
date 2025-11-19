@@ -1,4 +1,4 @@
-const db = require('../models/db.config');
+import db from './db.config.js';
 
 //model user (berisikan query database)
 const User = {
@@ -23,4 +23,4 @@ const User = {
     }
 };
 
-module.exports = User;
+export default User;
